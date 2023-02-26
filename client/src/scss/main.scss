@@ -1,0 +1,12 @@
+@import 'abstracts/variables';
+
+@import 'base/base';
+@import 'base/typography';
+
+@import '../components/Footer/footer';
+@import '../components/Navbar/navbar';
+
+@import '../app';
+@import '../pages/Home/home';
+@import '../pages/Product/product';
+@import '../pages/Products/products';

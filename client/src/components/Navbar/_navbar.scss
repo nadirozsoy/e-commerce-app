@@ -1,0 +1,60 @@
+.navbar {
+  height: 8rem;
+
+  .wrapper {
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .center {
+      font-size: 3rem;
+      letter-spacing: 3px;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+
+      .icons {
+        display: flex;
+        gap: 1.5rem;
+        color: $color-grey-1;
+        cursor: pointer;
+
+        .cardIcon {
+          position: relative;
+          color: $color-grey-1;
+
+          span {
+            font-size: 1.2rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: $color-tertiary;
+            color: #fff;
+            position: absolute;
+            top: -1rem;
+            right: -1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
