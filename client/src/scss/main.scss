@@ -3,10 +3,11 @@
 @import 'base/base';
 @import 'base/typography';
 
-@import '../components/Footer/footer';
-@import '../components/Navbar/navbar';
+@import '../components/Slider/Slider';
+@import '../components/Footer/Footer';
+@import '../components/Navbar/Navbar';
 
-@import '../app';
-@import '../pages/Home/home';
-@import '../pages/Product/product';
-@import '../pages/Products/products';
+@import '../App';
+@import '../pages/Home/Home';
+@import '../pages/Product/Product';
+@import '../pages/Products/Products';
