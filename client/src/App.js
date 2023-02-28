@@ -5,14 +5,15 @@ import Footer from './components/Footer/Footer'
 import Product from './pages/Product/Product'
 import Products from './pages/Products/Products'
 import './scss/main.scss'
+import { motion } from 'framer-motion'
 
 const Layout = () => {
   return (
-    <div className="app">
+    <motion.div className="app">
       <Navbar />
       <Outlet />
       <Footer />
-    </div>
+    </motion.div>
   )
 }
 

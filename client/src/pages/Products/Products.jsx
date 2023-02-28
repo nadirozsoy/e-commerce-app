@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import List from '../.././components/List/List'
+import { motion } from 'framer-motion'
 
 const Products = () => {
   const catId = parseInt(useParams().id)
-  console.log(catId)
   const [maxPrice, setMaxPrice] = useState(1000)
   const [sort, setSort] = useState(null)
 
+  function template({ rotate, x }) {
+    return `rotate(${rotate}) translateX(${x})`
+  }
+
   return (
-    <div className="products">
+    <motion.div
+      transformTemplate={template}
+      animate={{ rotate: 360 }}
+      style={{ rotate: 0, x: '0' }}
+      className="products"
+    >
       <div className="left">
         <div className="filterItem">
           <h2>Product Categories</h2>
@@ -87,7 +96,7 @@ const Products = () => {
           sort={sort}
         />
       </div>
-    </div>
+    </motion.div>
   )
 }
 
