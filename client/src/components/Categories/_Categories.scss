@@ -14,6 +14,10 @@
 
       img {
         object-position: top -5rem right 0;
+
+        @media only screen and (max-width: $bp-xl-1) {
+          object-position: center;
+        }
       }
     }
 
@@ -37,7 +41,11 @@
       grid-area: 2/3/3/5;
 
       img {
-        object-position: top -80rem right 0;
+        object-position: top -70rem right 0;
+
+        @media only screen and (max-width: $bp-xl-1) {
+          object-position: center;
+        }
       }
     }
   }

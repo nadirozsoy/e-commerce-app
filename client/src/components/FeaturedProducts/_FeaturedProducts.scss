@@ -1,5 +1,9 @@
 .featuredProducts {
-  margin: 10rem 20rem;
+  margin: 10rem;
+
+  @media only screen and (max-width: $bp-sm-1) {
+    margin: 3rem;
+  }
 
   .top {
     display: flex;
@@ -22,5 +26,6 @@
     display: flex;
     gap: 5rem;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }

@@ -12,6 +12,20 @@
     align-items: center;
     justify-content: space-between;
 
+    @media only screen and (max-width: $bp-xl-3) {
+      width: 75%;
+    }
+
+    @media only screen and (max-width: $bp-md-2) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $bp-sm-1) {
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
     span {
       font-size: 1.5rem;
       text-transform: uppercase;

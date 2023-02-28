@@ -3,7 +3,6 @@
   width: 100vw;
   position: relative;
   overflow: hidden;
-  box-shadow: $shadow-1;
 
   .container {
     width: 300vw;
@@ -16,6 +15,10 @@
       height: 100%;
       object-position: top -6rem right 0;
       object-fit: cover;
+
+      @media only screen and (max-width: $bp-xl-1) {
+        object-position: center;
+      }
     }
   }
 

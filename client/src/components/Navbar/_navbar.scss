@@ -2,11 +2,24 @@
   height: 8rem;
   box-shadow: $shadow-1;
 
+  @media only screen and (max-width: $bp-xl-3) {
+    height: 16rem;
+  }
+
+  @media only screen and (max-width: $bp-sm-2) {
+    height: 45rem;
+  }
+
   .wrapper {
     padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: $bp-xl-3) {
+      flex-direction: column;
+      gap: 2rem;
+    }
 
     .item {
       display: flex;
@@ -18,6 +31,20 @@
       display: flex;
       align-items: center;
       gap: 2.5rem;
+
+      @media only screen and (max-width: $bp-sm-2) {
+        flex-direction: column;
+      }
+
+      .linkItem {
+        display: flex;
+        gap: 2.5rem;
+
+        @media only screen and (max-width: $bp-sm-2) {
+          flex-direction: column;
+          gap: 2rem;
+        }
+      }
     }
 
     .center {
@@ -30,6 +57,19 @@
       display: flex;
       align-items: center;
       gap: 2.5rem;
+
+      .linkItem {
+        display: flex;
+        gap: 2.5rem;
+
+        @media only screen and (max-width: $bp-sm-2) {
+          gap: 2rem;
+        }
+      }
+
+      @media only screen and (max-width: $bp-sm-2) {
+        flex-direction: column;
+      }
 
       .icons {
         display: flex;

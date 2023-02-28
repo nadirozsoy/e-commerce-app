@@ -45,21 +45,23 @@ const Navbar = () => {
     <div className="navbar">
       <div className="wrapper">
         <div className="left">
-          <div className="item">
-            <img
-              src="/img/en.png"
-              alt="flag"
-            />
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className="item">
-            <Link
-              className="link"
-              to="/products/1"
-            >
-              USD
-            </Link>
-            <KeyboardArrowDownIcon />
+          <div className="linkItem">
+            <div className="item">
+              <img
+                src="/img/en.png"
+                alt="flag"
+              />
+              <KeyboardArrowDownIcon />
+            </div>
+            <div className="item">
+              <Link
+                className="link"
+                to="/products/1"
+              >
+                USD
+              </Link>
+              <KeyboardArrowDownIcon />
+            </div>
           </div>
           <div className="item">
             <Link
@@ -102,37 +104,39 @@ const Navbar = () => {
           ></Link>
         </div>
         <div className="right">
-          <div className="item">
-            <Link
-              className="link"
-              to="/products/6"
-            >
-              Homepage
-            </Link>
-          </div>
-          <div className="item">
-            <Link
-              className="link"
-              to="/products/7"
-            >
-              About
-            </Link>
-          </div>
-          <div className="item">
-            <Link
-              className="link"
-              to="/products/8"
-            >
-              Contact
-            </Link>
-          </div>
-          <div className="item">
-            <Link
-              className="link"
-              to="/products/9"
-            >
-              Stores
-            </Link>
+          <div className="linkItem">
+            <div className="item">
+              <Link
+                className="link"
+                to="/products/6"
+              >
+                Homepage
+              </Link>
+            </div>
+            <div className="item">
+              <Link
+                className="link"
+                to="/products/7"
+              >
+                About
+              </Link>
+            </div>
+            <div className="item">
+              <Link
+                className="link"
+                to="/products/8"
+              >
+                Contact
+              </Link>
+            </div>
+            <div className="item">
+              <Link
+                className="link"
+                to="/products/9"
+              >
+                Stores
+              </Link>
+            </div>
           </div>
           <div className="icons">
             <SearchIcon />

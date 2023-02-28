@@ -3,13 +3,28 @@
   display: flex;
   gap: 5rem;
 
+  @media only screen and (max-width: $bp-sm-1) {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
   .left {
     flex: 1;
     display: flex;
     gap: 1rem;
 
+    @media only screen and (max-width: $bp-md-1) {
+      flex-direction: column;
+    }
+
     .images {
       flex: 1;
+
+      @media only screen and (max-width: $bp-md-1) {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
 
       img {
         width: 100%;
@@ -18,8 +33,16 @@
         cursor: pointer;
         box-shadow: $shadow-1;
 
+        @media only screen and (max-width: $bp-md-1) {
+          width: 40%;
+        }
+
         &:not(:last-child) {
           margin-bottom: 1rem;
+
+          @media only screen and (max-width: $bp-md-1) {
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -32,6 +55,10 @@
         max-height: 80rem;
         object-fit: cover;
         box-shadow: $shadow-1;
+
+        @media only screen and (max-width: $bp-sm-1) {
+          height: 40rem;
+        }
       }
     }
   }
