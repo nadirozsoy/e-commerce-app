@@ -10,6 +10,7 @@
     height: 40rem;
     overflow: hidden;
     position: relative;
+    box-shadow: $shadow-1;
 
     &:hover {
       .secondImg {

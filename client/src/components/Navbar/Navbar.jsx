@@ -1,12 +1,46 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import SearchIcon from '@mui/icons-material/Search'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import { Link } from 'react-router-dom'
+import Cart from '../Cart/Cart'
+import Typed from 'typed.js'
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
+
+  const [shake, setShake] = useState(false)
+
+  const animate = () => {
+    // Button begins to shake
+    setShake(true)
+
+    // Buttons stops to shake after 2 seconds
+    setTimeout(() => setShake(false), 500)
+  }
+
+  const el = useRef(null)
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ['RARESTORE'], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 150,
+      backSpeed: 150,
+      backDelay: 150,
+      smartBackspace: true,
+      loop: true,
+      showCursor: false,
+    })
+
+    // Destropying
+    return () => {
+      typed.destroy()
+    }
+  }, [])
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -64,9 +98,8 @@ const Navbar = () => {
           <Link
             className="link"
             to="/"
-          >
-            RARESTORE
-          </Link>
+            ref={el}
+          ></Link>
         </div>
         <div className="right">
           <div className="item">
@@ -105,13 +138,20 @@ const Navbar = () => {
             <SearchIcon />
             <PersonOutlineIcon />
             <FavoriteBorderIcon />
-            <div className="cardIcon">
+            <div
+              className={shake ? `cardIcon shake` : 'cardIcon'}
+              onClick={() => {
+                setOpen((open) => !open)
+                animate()
+              }}
+            >
               <ShoppingCartOutlinedIcon />
               <span>0</span>
             </div>
           </div>
         </div>
       </div>
+      {open && <Cart />}
     </div>
   )
 }
