@@ -76,6 +76,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
       cursor: pointer;
+
+      @media only screen and (max-width: $bp-sm-2) {
+        font-size: 1rem;
+        padding: 1rem;
+      }
     }
   }
 }

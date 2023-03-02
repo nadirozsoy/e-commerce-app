@@ -1,21 +1,32 @@
 import Card from '../Card/Card'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const FeaturedProducts = ({ type }) => {
-  const data = [
-    {
-      name: 'a',
-    },
-    {
-      name: 'b',
-    },
-    {
-      name: 'c',
-    },
-    {
-      name: 'd',
-    },
-  ]
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_URL}/products?populate=*&[filters][type][$eq]=${type}`,
+          {
+            headers: {
+              Authorization: `bearer ${process.env.REACT_APP_API_TOKEN}`,
+            },
+          }
+        )
+        console.log(res)
+        setData(res.data.data)
+      } catch (err) {
+        // alert('There was a problem fetching data')
+        console.log(err)
+      }
+    }
+    fetchData()
+  }, [])
+
+  console.log(data)
 
   return (
     <div className="featuredProducts">
