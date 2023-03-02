@@ -3,7 +3,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const Card = ({ item }) => {
-  console.log(item)
   return (
     <Link
       to={`/product/${item.id}`}

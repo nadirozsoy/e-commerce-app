@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className="item">
               <Link
                 className="link"
-                to="/products/1"
+                to="/products/0"
               >
                 USD
               </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="item">
             <Link
               className="link"
-              to="/products/3"
+              to="/products/1"
             >
               Women
             </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
             <div className="item">
               <Link
                 className="link"
-                to="/products/6"
+                to="/"
               >
                 Homepage
               </Link>
