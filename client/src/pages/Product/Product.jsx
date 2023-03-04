@@ -5,11 +5,15 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined'
 import { useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/cartReducer'
 
 const Product = () => {
   const id = useParams().id
   const [selectedImg, setSelectedImg] = useState('img')
   const [quantity, setQuantity] = useState(1)
+
+  const dispatch = useDispatch()
 
   const variants = {
     open: { opacity: 1, x: [600, 0, 0] },
@@ -80,7 +84,23 @@ const Product = () => {
               {quantity}
               <button onClick={() => setQuantity((post) => post + 1)}>+</button>
             </div>
-            <button className="add">
+            <button
+              className="add"
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: data.id,
+                    title: data.attributes.title,
+                    desc: data.attributes.desc,
+                    price: data.attributes.price,
+                    img:
+                      process.env.REACT_APP_API_URL.split('/api').join('') +
+                      data.attributes.img.data.attributes.url,
+                    quantity,
+                  })
+                )
+              }
+            >
               <AddShoppingCartIcon /> Add to cart
             </button>
             <div className="links">
