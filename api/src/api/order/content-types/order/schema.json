@@ -11,9 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "email": {
-      "type": "string"
-    },
     "stripeId": {
       "type": "text"
     },
